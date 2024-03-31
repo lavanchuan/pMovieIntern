@@ -1,0 +1,36 @@
+﻿Name: 		La Văn Chuân
+Mentor chính: 	Gấm
+Khóa: 		Backend java
+
+========== Công việc đã làm ===========
+- Tạo database với code first (jpa)
+- Đăng ký tài khoản với gmail => mã xác thực gửi về gmail
+- Xác thực tài khoản đã đăng ký với mã xác thực nhận được trong gmail
+- Đăng nhập với username và password (password được lưu bằng cách mã hóa) 
+	-> đăng nhập thành công nhận được token(jwt)
+- Đổi mật khẩu thông qua token, điều kiện đổi(mật khẩu cũ phải chính xác)
+- Quên mật khẩu, tạo mật khẩu mới
+
+- Lấy thông tin tất cả người dùng, lấy theo id
+
+- Hiển thị các movie nổi bật
+- CRUD các bảng
+- Hiển thị movie theo cinema, room, status seat
+
+- Xử lý luồng chính: chọn phim(movieId) -> chọn rạp(cinemaId) -> chọn phòng(roomId)
+	-> chọn xuất chiếu(scheduleId) -> chọn đồ ăn (foodId) 
+	-> tạo hóa đơn -> thanh toán giảm giá theo promotionId(nếu khác hàng có promotion)
+	**(chưa thanh toán bằng VNPay)
+- đảm bảo trong 1 phòng không không chiếu đồng thời 2 phim trong khoảng thời gian giao nhau
+	ScheduleServiceImpl.isValidSchedule(ScheduleDTO, List<ScheduleDAO>)
+
+- Thống kê doanh số của từng rạp theo khoảng thời gian(role Admin)
+-Thống kê đồ ăn bán chạy trong 7 ngày gần nhất(Admin)
+- Quản lý thông tin của người dùng(Admin)
+	+ CRUD người dùng
+	+ Đổi vai trò người dùng
+	+ Đổi trạng thái kích hoạt người dùng
+	+ Đổi xếp hạng(rank) người dùng để hưởng các ưu đãi(promotion)
+
+- Các chức năng của người dùng, admin cần phải đăng nhập thông qua token, các chức năng của admin(/admin/**)
+	bắt buộc vai trò là ADMIN mới được thực thi
